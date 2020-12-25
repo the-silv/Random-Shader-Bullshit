@@ -1,0 +1,203 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://particle_swarm.shader" type="Shader" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.125926, 0.533333, 0.837037, 1 )
+colors = PoolColorArray( 0, 0.291422, 0.909804, 1, 0, 0.775269, 0.855469, 1, 0, 0.360784, 0.866667, 1, 0, 0.929688, 1, 1, 0.367188, 0.985168, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.0666667, 0.896296, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.948148, 0.948148, 0.948148, 1, 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="OpenSimplexNoise" id=5]
+seed = 2
+octaves = 1
+period = 1.0
+
+[sub_resource type="NoiseTexture" id=6]
+width = 64
+height = 64
+noise = SubResource( 5 )
+
+[sub_resource type="OpenSimplexNoise" id=7]
+octaves = 2
+period = 8.0
+persistence = 0.596
+lacunarity = 2.75
+
+[sub_resource type="NoiseTexture" id=8]
+width = 64
+height = 64
+noise = SubResource( 7 )
+
+[sub_resource type="OpenSimplexNoise" id=9]
+octaves = 1
+period = 1.0
+
+[sub_resource type="NoiseTexture" id=10]
+width = 64
+height = 64
+noise = SubResource( 9 )
+
+[sub_resource type="OpenSimplexNoise" id=11]
+octaves = 1
+period = 8.0
+
+[sub_resource type="NoiseTexture" id=12]
+width = 64
+height = 64
+noise = SubResource( 11 )
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 2 )
+shader_param/size = Vector2( 64, 64 )
+shader_param/offset = Vector2( 256, -128 )
+shader_param/spacing = 1.0
+shader_param/fx_power = Vector2( 16, 16 )
+shader_param/fx_speed = Vector2( 3, 4 )
+shader_param/sprite = ExtResource( 1 )
+shader_param/fx_ramp = SubResource( 2 )
+shader_param/mix_ramp = SubResource( 4 )
+shader_param/noise_one = SubResource( 8 )
+shader_param/noise_two = SubResource( 12 )
+shader_param/noise_three = SubResource( 10 )
+shader_param/noise_four = SubResource( 6 )
+
+[sub_resource type="Gradient" id=14]
+offsets = PoolRealArray( 0, 0.0666667, 0.377778, 0.740741, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.40625, 0, 0, 1, 1, 0.960938, 0, 1, 0.636719, 0.636719, 0.636719, 0.863815, 0.308594, 0.308594, 0.308594, 0 )
+
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 14 )
+
+[sub_resource type="Gradient" id=16]
+offsets = PoolRealArray( 0, 0.0888889 )
+colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=17]
+gradient = SubResource( 16 )
+
+[sub_resource type="ShaderMaterial" id=18]
+shader = ExtResource( 2 )
+shader_param/size = Vector2( 64, 64 )
+shader_param/offset = Vector2( 64, -256 )
+shader_param/spacing = 1.0
+shader_param/fx_power = Vector2( 32, 16 )
+shader_param/fx_speed = Vector2( 2, 2 )
+shader_param/sprite = ExtResource( 1 )
+shader_param/fx_ramp = SubResource( 15 )
+shader_param/mix_ramp = SubResource( 17 )
+shader_param/noise_one = SubResource( 8 )
+shader_param/noise_two = SubResource( 12 )
+shader_param/noise_three = SubResource( 10 )
+shader_param/noise_four = SubResource( 6 )
+
+[sub_resource type="Gradient" id=20]
+offsets = PoolRealArray( 0, 0.474074 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.125, 0.125, 0.125, 1 )
+
+[sub_resource type="GradientTexture" id=21]
+gradient = SubResource( 20 )
+
+[sub_resource type="Gradient" id=22]
+offsets = PoolRealArray( 0, 0.82963, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=23]
+gradient = SubResource( 22 )
+
+[sub_resource type="ShaderMaterial" id=19]
+shader = ExtResource( 2 )
+shader_param/size = Vector2( 64, 64 )
+shader_param/offset = Vector2( 0, 128 )
+shader_param/spacing = 1.0
+shader_param/fx_power = Vector2( 64, 16 )
+shader_param/fx_speed = Vector2( 5, 2 )
+shader_param/sprite = ExtResource( 1 )
+shader_param/fx_ramp = SubResource( 21 )
+shader_param/mix_ramp = SubResource( 23 )
+shader_param/noise_one = SubResource( 8 )
+shader_param/noise_two = SubResource( 12 )
+shader_param/noise_three = SubResource( 10 )
+shader_param/noise_four = SubResource( 6 )
+
+[sub_resource type="Gradient" id=24]
+offsets = PoolRealArray( 0, 0.207407, 0.518519, 1 )
+colors = PoolColorArray( 0, 1, 0.576471, 1, 0, 1, 0.4375, 1, 0, 1, 0.811765, 1, 0, 0.694118, 1, 1 )
+
+[sub_resource type="GradientTexture" id=25]
+gradient = SubResource( 24 )
+
+[sub_resource type="Gradient" id=26]
+offsets = PoolRealArray( 0, 0.037037, 0.459259, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=27]
+gradient = SubResource( 26 )
+
+[sub_resource type="OpenSimplexNoise" id=28]
+octaves = 1
+period = 16.0
+
+[sub_resource type="NoiseTexture" id=29]
+width = 64
+height = 64
+noise = SubResource( 28 )
+
+[sub_resource type="ShaderMaterial" id=30]
+shader = ExtResource( 2 )
+shader_param/size = Vector2( 64, 64 )
+shader_param/offset = Vector2( 0, 0 )
+shader_param/spacing = 1.0
+shader_param/fx_power = Vector2( 1, 1 )
+shader_param/fx_speed = Vector2( 1, 1 )
+shader_param/sprite = ExtResource( 1 )
+shader_param/fx_ramp = SubResource( 25 )
+shader_param/mix_ramp = SubResource( 27 )
+shader_param/noise_one = SubResource( 8 )
+shader_param/noise_two = SubResource( 29 )
+shader_param/noise_three = SubResource( 10 )
+shader_param/noise_four = SubResource( 6 )
+
+[node name="Shaders" type="Node2D"]
+
+[node name="Teleport" type="Particles2D" parent="."]
+emitting = false
+amount = 4096
+lifetime = 8.0
+explosiveness = 1.0
+visibility_rect = Rect2( -1000, -1000, 2000, 2000 )
+process_material = SubResource( 13 )
+
+[node name="Fire" type="Particles2D" parent="."]
+emitting = false
+amount = 4096
+lifetime = 8.0
+explosiveness = 1.0
+visibility_rect = Rect2( -1000, -1000, 2000, 2000 )
+process_material = SubResource( 18 )
+
+[node name="Swarm" type="Particles2D" parent="."]
+position = Vector2( 0, -128 )
+emitting = false
+amount = 4096
+lifetime = 8.0
+explosiveness = 1.0
+visibility_rect = Rect2( -1000, -1000, 2000, 2000 )
+process_material = SubResource( 19 )
+
+[node name="Recomposite" type="Particles2D" parent="."]
+emitting = false
+amount = 4096
+lifetime = 4.0
+explosiveness = 1.0
+visibility_rect = Rect2( -1000, -1000, 2000, 2000 )
+process_material = SubResource( 30 )
