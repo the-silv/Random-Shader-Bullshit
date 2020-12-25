@@ -1,5 +1,4 @@
 # Random Shader Bullshit
-Pretty self explanatory... :P
 ![The classic meme...](https://i.imgflip.com/4b5jf0.jpg)
 
 ## So, what?
