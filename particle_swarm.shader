@@ -30,7 +30,7 @@ void vertex() {
 	float smooth_anim_offset = sin(linear_anim_offset * PI - PI * 0.5) * 0.5 + 0.5;
 	float animating_power = sin(linear_anim_offset * PI);
 	
-	COLOR = texture(sprite, uv);
+	COLOR = mix(texture(sprite, uv), texture(sprite_to, uv), smooth_anim_offset);
 	
 	pos -= vec2(size.x * 0.5 - 0.5);
 	

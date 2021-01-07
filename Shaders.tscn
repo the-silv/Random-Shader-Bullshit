@@ -1,7 +1,8 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://particle_swarm.shader" type="Shader" id=2]
+[ext_resource path="res://icon_second.png" type="Texture" id=3]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.125926, 0.533333, 0.837037, 1 )
@@ -166,7 +167,7 @@ shader_param/offset = Vector2( 0, 0 )
 shader_param/spacing = 1.0
 shader_param/fx_power = Vector2( 1, 1 )
 shader_param/fx_speed = Vector2( 1, 1 )
-shader_param/sprite = ExtResource( 1 )
+shader_param/sprite = ExtResource( 3 )
 shader_param/sprite_to = ExtResource( 1 )
 shader_param/fx_ramp = SubResource( 25 )
 shader_param/mix_ramp = SubResource( 27 )
